@@ -1,0 +1,20 @@
+<div class="container m-3">
+  <div class="home-image">
+    <h1>Save any kind of movie</h1>
+  </div>
+
+  <div class="grid-container">
+    <% @lists.each do |list| %>
+      <div class="grid-item">
+        <div class="card-product">
+          <div class="card-product-infos">
+            <h2><%= link_to list.name, list_path(list) %></h2>
+            <p>Product description with <strong>relevant info</strong> only.</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Add a list", new_list_path(@list), class: "btn btn-primary" %>
+</div>

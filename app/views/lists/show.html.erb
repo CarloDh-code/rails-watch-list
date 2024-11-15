@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <h1><%= @list.name %></h1>
+
+  <br>
+
+  <h2>Current Bookmarks</h2>
+  <div class="container">
+    <div class="row mt-5">
+      <% @list.bookmarks.each do |bookmark| %>
+        <div class="col-4">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2959&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+            <%= bookmark.movie.title %>
+            <%= bookmark.comment %>
+            <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <br>
+
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.button :submit %>
+  <% end %>
+
+  <br>
+
+  <%= link_to "Back to lists", lists_path, class: "btn btn-primary" %>
+</div>

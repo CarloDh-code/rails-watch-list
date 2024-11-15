@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  grid-gap: 10px; /* Espace entre les éléments de la grille */
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+/* Style pour chaque élément de la grille */
+.grid-item {
+  background-color: #8b8b8b;
+  border: 1px solid #333;
+  padding: 20px;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.home-image {
+  height: 500px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  background-image: image-url('cine.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #f4f4f4;
+}
